@@ -21,7 +21,7 @@ namespace BusinessLogic
         private static string instructorName = "STAFF";
         public string InstructorName
         {
-            get { return instructorName;  }
+            get { return instructorName; }
             set { instructorName = value; }
         }
 
@@ -29,7 +29,7 @@ namespace BusinessLogic
         /// The name of the course
         /// </summary>
         public string CourseName { get; set; }
- 
+
 
         /// <summary>
         /// Number of credits for the course
@@ -38,9 +38,9 @@ namespace BusinessLogic
 
         public Course(byte numCredits)
         {
-            if(numCredits > 30)
+            if (numCredits == 0 || numCredits > 30)
             {
-                throw new ArgumentException("You cannot have more than 30 credits!");
+                throw new ArgumentException("You must have between 1 and 30 credits!");
             }
             NumberOfCredits = numCredits;
         }
